@@ -8,3 +8,6 @@ The app allows the physically impaired tourist to buy a ticket, see transport ma
 
 - [Backend for transport mobility options](/backend/)
 - [Mobile App](/mobile-app/)
+
+## License
+Distributed under the GNU General Public License v3.0. See the [License](/LICENSE) for more information.
