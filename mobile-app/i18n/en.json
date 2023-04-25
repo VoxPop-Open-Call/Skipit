@@ -1,0 +1,73 @@
+{
+  "from": "From",
+  "to": "To",
+  "now": "Now",
+  "leave": "Leave",
+  "arrive": "Arrive",
+  "support": "Support",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "language": "Language",
+  "more": "More",
+  "accessibility": "Accessibility",
+  "settings": "Settings",
+  "mins": "mins",
+  "line": "Line",
+  "search": "Search",
+  "loading": "Loading",
+  "destination": "Destination",
+  "stations": "Stations",
+  "transportMaps": "Transport Maps",
+  "transitSearch": "Transit Search",
+  "buyTicket": "Buy ticket",
+  "pickTime": "Pick time",
+  "pickDate": "Pick date",
+  "currentLocation": "Current location",
+  "selectRoute": "Select a route",
+  "otherRoutes": "Show other routes",
+  "journeyOverview": "Journey Overview",
+  "chooseLanguage": "Please choose a language",
+  "accessibilityAtStation": "Accessibility at station",
+  "getOfAfter": {
+    "one": "Get off after {} stop",
+    "other": "Get off after {} stops"
+  },
+  "cToggle": {
+    "onlyAccessible": "Show most accessible routes",
+    "stationAccessibility": "Show stations accessibility"
+  },
+  "cTransportType": {
+    "train": "Train",
+    "tram": "Tram",
+    "bus": "Bus",
+    "metro": "Metro",
+    "ferry": "Ferry"
+  },
+  "cAccessibility": {
+    "elevator": "Elevator",
+    "stairs":"Stairs",
+    "escalator": "Escalator",
+    "toilet":"Toilet",
+    "waitingRoom": "Waiting Room",
+    "bikeParking":"Bike Parking",
+    "ramp": "Ramp",
+    "wheelchairFriendly":"Wheelchair Friendly",
+    "disabledToilet": "Disabled Toilet",
+    "ticketPurchase":"Ticket Purchase",
+    "assistance": "Assistance"
+  },
+  "cError": {
+    "pageNotFound": "Page not found!",
+    "oopsTryAgain": "Oops something went wrong, please try again.",
+    "noRoute": "No route available.",
+    "noAccessibleRoute": "No accessible route available. Please turn off the \"@:cToggle.onlyAccessible\" toggle to view all routes.",
+    "noTransportMaps": "No transport maps found.",
+    "noAccessibilityStation": "No accessibility data found for this station.",
+    "nothingFound": "Nothing found.",
+    "sendEmail": "Failed to send email. Please try again later."
+  },
+  "cLocation": {
+    "serviceIsDisabled": "Your device location service is disabled. Please enable it and try again.",
+    "denied": "You denied to share your location. Please allow it and try again."
+  }
+}

@@ -1,0 +1,247 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserInfo {
+  id: String!
+  username: String!
+  roles: [String!]!
+  accessToken: String
+}
+
+type User {
+  createdAt: DateTime!
+  firstName: String
+  id: String!
+  lastName: String
+  roles: JSON!
+  updatedAt: DateTime!
+  username: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+
+type MetaQueryPayload {
+  count: Float!
+}
+
+type TransitOption {
+  accessibilities: [EnumTransitOptionAccessibilities!]
+  createdAt: DateTime!
+  id: String!
+  name: String
+  transportTypes: [EnumTransitOptionTransportTypes!]
+  updatedAt: DateTime!
+}
+
+enum EnumTransitOptionAccessibilities {
+  ELEVATOR
+  STAIRS
+  ESCALATOR
+  TOILET
+  WAITING_ROOM
+  BIKE_PARKING
+  RAMP
+  WHEELCHAIR_FRIENDLY
+  DISABLED_TOILET
+  TICKET_PURCHASE
+  ASSISTANCE
+}
+
+enum EnumTransitOptionTransportTypes {
+  BUS
+  TRAM
+  TRAIN
+  FERRY
+  METRO
+}
+
+type TransportMap {
+  createdAt: DateTime!
+  icon: String
+  id: String!
+  name: String
+  thumbnailUrl: String
+  updatedAt: DateTime!
+  url: String
+}
+
+type Query {
+  userInfo: UserInfo!
+  _usersMeta(where: UserWhereInput, orderBy: [UserOrderByInput!], skip: Float, take: Float): MetaQueryPayload!
+  users(where: UserWhereInput, orderBy: [UserOrderByInput!], skip: Float, take: Float): [User!]!
+  user(where: UserWhereUniqueInput!): User
+  _transitOptionsMeta(where: TransitOptionWhereInput, orderBy: [TransitOptionOrderByInput!], skip: Float, take: Float): MetaQueryPayload!
+  transitOptions(where: TransitOptionWhereInput, orderBy: [TransitOptionOrderByInput!], skip: Float, take: Float): [TransitOption!]!
+  transitOption(where: TransitOptionWhereUniqueInput!): TransitOption
+  _transportMapsMeta(where: TransportMapWhereInput, orderBy: [TransportMapOrderByInput!], skip: Float, take: Float): MetaQueryPayload!
+  transportMaps(where: TransportMapWhereInput, orderBy: [TransportMapOrderByInput!], skip: Float, take: Float): [TransportMap!]!
+  transportMap(where: TransportMapWhereUniqueInput!): TransportMap
+}
+
+input UserWhereInput {
+  firstName: StringNullableFilter
+  id: StringFilter
+  lastName: StringNullableFilter
+  username: StringFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: String
+}
+
+enum QueryMode {
+  Default
+  Insensitive
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: String
+}
+
+input UserOrderByInput {
+  createdAt: SortOrder
+  firstName: SortOrder
+  id: SortOrder
+  lastName: SortOrder
+  password: SortOrder
+  roles: SortOrder
+  updatedAt: SortOrder
+  username: SortOrder
+}
+
+enum SortOrder {
+  Asc
+  Desc
+}
+
+input UserWhereUniqueInput {
+  id: String!
+}
+
+input TransitOptionWhereInput {
+  id: StringFilter
+  name: StringNullableFilter
+}
+
+input TransitOptionOrderByInput {
+  accessibilities: SortOrder
+  createdAt: SortOrder
+  id: SortOrder
+  name: SortOrder
+  transportTypes: SortOrder
+  updatedAt: SortOrder
+}
+
+input TransitOptionWhereUniqueInput {
+  id: String!
+}
+
+input TransportMapWhereInput {
+  id: StringFilter
+  name: StringNullableFilter
+}
+
+input TransportMapOrderByInput {
+  createdAt: SortOrder
+  icon: SortOrder
+  id: SortOrder
+  name: SortOrder
+  thumbnailUrl: SortOrder
+  updatedAt: SortOrder
+  url: SortOrder
+}
+
+input TransportMapWhereUniqueInput {
+  id: String!
+}
+
+type Mutation {
+  login(credentials: Credentials!): UserInfo!
+  createUser(data: UserCreateInput!): User!
+  updateUser(where: UserWhereUniqueInput!, data: UserUpdateInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): User!
+  createTransitOption(data: TransitOptionCreateInput!): TransitOption!
+  updateTransitOption(where: TransitOptionWhereUniqueInput!, data: TransitOptionUpdateInput!): TransitOption!
+  deleteTransitOption(where: TransitOptionWhereUniqueInput!): TransitOption!
+  createTransportMap(data: TransportMapCreateInput!): TransportMap!
+  updateTransportMap(where: TransportMapWhereUniqueInput!, data: TransportMapUpdateInput!): TransportMap!
+  deleteTransportMap(where: TransportMapWhereUniqueInput!): TransportMap!
+}
+
+input Credentials {
+  username: String!
+  password: String!
+}
+
+input UserCreateInput {
+  firstName: String
+  lastName: String
+  password: String!
+  roles: JSON!
+  username: String!
+}
+
+input UserUpdateInput {
+  firstName: String
+  lastName: String
+  password: String
+  roles: JSON
+  username: String
+}
+
+input TransitOptionCreateInput {
+  accessibilities: [EnumTransitOptionAccessibilities!]
+  name: String
+  transportTypes: [EnumTransitOptionTransportTypes!]
+}
+
+input TransitOptionUpdateInput {
+  accessibilities: [EnumTransitOptionAccessibilities!]
+  name: String
+  transportTypes: [EnumTransitOptionTransportTypes!]
+}
+
+input TransportMapCreateInput {
+  icon: String
+  name: String
+  thumbnailUrl: String
+  url: String
+}
+
+input TransportMapUpdateInput {
+  icon: String
+  name: String
+  thumbnailUrl: String
+  url: String
+}
