@@ -4,6 +4,29 @@ Lisbon Travel is a Flutter app that empowers disabled tourists to use public tra
 The app allows users to search for public transport routes based on their current location or a
 manually entered location, and displays the route on a map.
 
+## Demo
+
+<table>
+  <tr>
+    <td>
+      <img width="500px" src="screenshots/Screenshot 1.png">
+    </td>
+    <td>
+      <img width="500px" src="screenshots/Screenshot 2.png">
+    </td>
+    <td>
+      <img width="500px" src="screenshots/Screenshot 3.png">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img width="500px" src="screenshots/Screenshot 4.png">
+    </td>
+    <td>
+      <img width="500px" src="screenshots/Screenshot 5.png">
+    </td>
+</table>
+
 ## Getting started
 
 To run the application, follow these steps:
@@ -48,14 +71,17 @@ To run the application, follow these steps:
    also a trip overview shown after the user clicks on a trip, which contains all the information
    about the route and station, as well as accessibility data for each station.
 
-3. **Settings** - /lib/screens/settings<br>
-   Settings Page
+2. **Settings** - /lib/screens/settings<br>
+   Right now, there is only one option which is Language. It can also include more information
+   related to Terms of Use, Privacy Policy, etc.
 
-4. **Transport Maps** - /lib/screens/transport_maps<br>
-   Transport Maps Page
+3. **Transport Maps** - /lib/screens/transport_maps<br>
+   This page uses the API to get all transport maps related to Lisbon. It can show them in full
+   screen and users can interact with it.
 
-5. **Station Accessibility** - /lib/screens/...<br>
-   Station Accessibility Page
+4. **Station Accessibility** - /lib/screens/transit_search<br>
+   This page uses the API to search through all available stations and bus routes. After the search,
+   users can select a station to see accessibility details.
 
 ## Update translation files
 
@@ -71,6 +97,13 @@ To run the application, follow these steps:
 
 1. Copy the `i18n/en.json` and paste it in the same directory
 2. Change the name of the file to desire language code.
-3. Open `main_common.dart` file and add it to `supportedLocales`.
+3. Open `supported.dart` file and add it to `supportedLanguages`.
 4. Open `info.plist` file and add it to `CFBundleLocalizations` array.
-5. Open `languages_names_constants.dart` file and add it's flag to `languageFlags`.
+5. Open `language_names.dart` file and add it's flag to `languageFlags`.
+
+## Payment
+
+Right now, when clicking on the "Buy Ticket" button, it opens a webpage related to city-pass. In an
+ideal scenario, it should open another page and pass the route. After that, it should connect to the
+API and send all related information about the route. The API should return the price and a link so
+users can pay for the ticket.
