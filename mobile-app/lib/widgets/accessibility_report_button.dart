@@ -38,15 +38,15 @@ class AccessibilityReportButton extends StatelessWidget {
         if (targetEmail != null) {
           EmailUtils.sendEmail(
             email: targetEmail,
-            subject: 'subject', // todo
-            message: 'message', // todo
+            subject: '',
+            message: '',
             onError: (error) => GetIt.I<ToastManager>()
                 .error(error ?? LocaleKeys.cError_sendEmail.tr()),
           );
         }
       },
       style: $styles.button.primaryTextButtonStyle,
-      child: const Text('Report'),
+      child: Text(LocaleKeys.reportIssue.tr()),
     );
   }
 }

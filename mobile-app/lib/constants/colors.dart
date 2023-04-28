@@ -8,6 +8,7 @@ class AppColors {
   static const Color textWhite = white;
   static const Color primaryButton = lightBlue;
   static const Color primaryButtonDisabled = grey300;
+  static const Color disabledIcon = Color(0xFFC4C4C4);
 
   static const Color sliderDotActive = Color(0xFF484545);
   static const Color sliderDotInActive = Color(0xFFD9D9D9);
@@ -48,9 +49,10 @@ class AppColors {
         buttonColor: primaryButton,
         height: 42,
       ),
-      dialogTheme: DialogTheme(
-
-      ),
+      dialogTheme: const DialogTheme(),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: primary,
+      )
     );
   }
 }

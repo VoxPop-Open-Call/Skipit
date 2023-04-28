@@ -12,6 +12,7 @@ import 'package:lisbon_travel/logic/service/settings_service.dart';
 import 'package:lisbon_travel/models/trip_routes_model.dart';
 import 'package:lisbon_travel/screens/home/models/trip_date_type.dart';
 import 'package:lisbon_travel/utils/extensions/index.dart';
+import 'package:lisbon_travel/utils/url_launcher_utils.dart';
 import 'package:lisbon_travel/widgets/trip_overview.dart';
 
 class SearchRouteOptions extends StatefulWidget {
@@ -107,6 +108,7 @@ class _SearchRouteOptionsState extends State<SearchRouteOptions>
                       TripOverview(
                         route: currentRoute,
                         tripType: _currentTravelMode,
+                        showGoButton: true,
                         onTap: () => widget.onRouteTapped?.call(
                           currentRoute,
                           _currentTravelMode,
@@ -179,13 +181,20 @@ class _SearchRouteOptionsState extends State<SearchRouteOptions>
                     const SizedBox(height: 4),
                     _otherRoutesWidget(),
                   },
-                  if (hasRoute) ...{
+                  if (hasRoute && _currentTravelMode == TravelMode.transit) ...{
                     const SizedBox(height: 12),
                     SizedBox(
                       width: double.infinity,
                       child: TextButton(
                         style: $styles.button.primaryTextButtonStyle,
-                        onPressed: () {},
+                        onPressed: () {
+                          // todo:
+                          // here is where the buy process happens.
+                          // you need to replace this with your payment process.
+                          UrlLauncherUtils.openUrl(
+                            'https://www.metrolisboa.pt/en/2020/08/03/vouchers-viva/',
+                          );
+                        },
                         child: Text(
                           LocaleKeys.buyTicket.tr(),
                           style: const TextStyle(
@@ -510,6 +519,7 @@ class _SearchRouteOptionsState extends State<SearchRouteOptions>
                       route: topRoute,
                       tripType: _currentTravelMode,
                       showWalkingTime: true,
+                      showGoButton: false,
                     ),
                   ),
                 ),
@@ -536,6 +546,7 @@ class _SearchRouteOptionsState extends State<SearchRouteOptions>
                         route: routes.elementAt(index),
                         tripType: _currentTravelMode,
                         showWalkingTime: true,
+                        showGoButton: false,
                       ),
                     ),
                   ),

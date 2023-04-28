@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_directions_api/google_directions_api.dart';
+import 'package:lisbon_travel/constants/colors.dart';
 import 'package:lisbon_travel/generated/assets.gen.dart';
 import 'package:lisbon_travel/generated/locale_keys.g.dart';
 import 'package:lisbon_travel/logic/bloc/trip/trip_bloc.dart';
@@ -118,6 +119,7 @@ class _TripDetailsSliderPanelState extends State<TripDetailsSliderPanel> {
                               tripType: widget.travelMode,
                               showWalkingTime: true,
                               compactMode: true,
+                              showGoButton: false,
                             ),
                           ],
                         ),
@@ -147,8 +149,8 @@ class _TripDetailsSliderPanelState extends State<TripDetailsSliderPanel> {
                         child: Icon(
                           Icons.arrow_back_ios_outlined,
                           color: carouselIndex == 0
-                              ? const Color(0xFFC4C4C4)
-                              : Colors.black,
+                              ? AppColors.disabledIcon
+                              : AppColors.primary,
                         ),
                       ),
                       GestureDetector(
@@ -158,8 +160,8 @@ class _TripDetailsSliderPanelState extends State<TripDetailsSliderPanel> {
                         child: Icon(
                           Icons.arrow_forward_ios_outlined,
                           color: carouselIndex == steps.length - 1 + 2
-                              ? const Color(0xFFC4C4C4)
-                              : Colors.black,
+                              ? AppColors.disabledIcon
+                              : AppColors.primary,
                         ),
                       ),
                     ],

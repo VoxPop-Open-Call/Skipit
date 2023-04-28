@@ -32,11 +32,11 @@ class _HelperExpandableButtonsState extends State<HelperExpandableButtons> {
           width: baseButtonSize * 3 + 0.6,
         ),
         ExpandableButton(
-          text: LocaleKeys.stations.tr(),
+          text: LocaleKeys.accessibility.tr(),
           duration: _animationDuration,
           size: show ? baseButtonSize : 0,
           baseSize: baseButtonSize,
-          icon: CustomAccessibilityIcons.accessibility,
+          icon: CustomAccessibilityIcons.wheelchair,
           index: 2,
           show: show,
           onTap: () => Navigator.push(

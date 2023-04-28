@@ -23,7 +23,7 @@ class TransitSearchBar extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(height: 16),
+        const SizedBox(height: 4),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           alignment: Alignment.topCenter,
@@ -39,7 +39,7 @@ class TransitSearchBar extends StatelessWidget {
             ),
             child: PaginatedSearchBar<TransitOption>(
               maxHeight: MediaQuery.of(context).size.height * 0.3,
-              hintText: LocaleKeys.search.tr(),
+              hintText: LocaleKeys.cInput_searchStationRoute.tr(),
               autoFocus: true,
               padding: const EdgeInsets.symmetric(vertical: 6),
               itemPadding: 0,

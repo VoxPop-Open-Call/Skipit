@@ -299,7 +299,7 @@ class _SearchSliderState extends State<SearchSlider> {
     final focusLocation = locationService.position?.toLatLng() ??
         currentRoute.steps?.firstOrNull?.startLocation?.toLatLng();
     if (focusLocation != null) {
-      mapBloc.add(MapEvent.setLocation(focusLocation, zoom: 17));
+      mapBloc.add(MapEvent.setLocation(focusLocation, zoom: 18.5));
     }
   }
 

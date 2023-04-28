@@ -37,7 +37,7 @@ class _TransitSearchViewState extends State<TransitSearchView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.transitSearch.tr()),
+        title: Text(LocaleKeys.accessibilitySearch.tr()),
       ),
       body: SafeArea(
         child: Stack(

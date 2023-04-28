@@ -5,6 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:google_directions_api/google_directions_api.dart';
 import 'package:lisbon_travel/api_service/dio_provider.dart';
 import 'package:lisbon_travel/constants/constants.dart';
+import 'package:lisbon_travel/constants/supported.dart';
 import 'package:lisbon_travel/env/env.dart';
 import 'package:lisbon_travel/logic/repository/google_direction_repository.dart';
 import 'package:lisbon_travel/logic/repository/google_places_repository.dart';
@@ -30,9 +31,7 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: const [
-        Locale('en'),
-      ],
+      supportedLocales: supportedLanguages,
       path: 'i18n',
       fallbackLocale: const Locale('en'),
       useFallbackTranslations: true,

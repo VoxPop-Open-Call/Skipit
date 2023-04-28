@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lisbon_travel/generated/locale_keys.g.dart';
-import 'package:lisbon_travel/utils/languages_name_constant.dart';
+import 'package:lisbon_travel/constants/language_names.dart';
 import 'package:lisbon_travel/widgets/item_picker_page.dart';
 import 'package:lisbon_travel/widgets/setting/settings_category.dart';
 import 'package:lisbon_travel/widgets/setting/simple_setting_option.dart';

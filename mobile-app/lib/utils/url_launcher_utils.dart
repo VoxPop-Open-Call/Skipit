@@ -9,10 +9,10 @@ class UrlLauncherUtils {
     Function()? onSuccess,
     Function()? onFailure,
   }) async {
-    if (await canLaunchUrlString(url)) {
+    try {
       await launchUrlString(url);
       onSuccess?.call();
-    } else {
+    } catch (e) {
       onFailure?.call();
     }
   }
@@ -22,10 +22,10 @@ class UrlLauncherUtils {
     Function()? onSuccess,
     Function()? onFailure,
   }) async {
-    if (await canLaunchUrl(uri)) {
+    try {
       await launchUrl(uri);
       onSuccess?.call();
-    } else {
+    } catch (e) {
       onFailure?.call();
     }
   }

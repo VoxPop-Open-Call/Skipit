@@ -7,6 +7,7 @@ import 'package:lisbon_travel/generated/locale_keys.g.dart';
 import 'package:lisbon_travel/logic/bloc/trip/trip_bloc.dart';
 import 'package:lisbon_travel/screens/home/widgets/trip_details/trip_details_slider_panel.dart';
 import 'package:lisbon_travel/utils/extensions/index.dart';
+import 'package:lisbon_travel/utils/url_launcher_utils.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class TripDetails extends StatefulWidget {
@@ -46,7 +47,12 @@ class _TripDetailsState extends State<TripDetails> {
                             child: TextButton(
                               style: $styles.button.primaryTextButtonStyle,
                               onPressed: () {
-                                // todo: redirect to buying
+                                // todo:
+                                // here is where the buy process happens.
+                                // you need to replace this with your payment process.
+                                UrlLauncherUtils.openUrl(
+                                  'https://www.metrolisboa.pt/en/2020/08/03/vouchers-viva',
+                                );
                               },
                               child: Text(LocaleKeys.buyTicket.tr()),
                             ),

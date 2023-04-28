@@ -48,7 +48,7 @@ class _MapViewState extends State<MapView> {
               zoomGesturesEnabled: true,
               zoomControlsEnabled: false,
               tiltGesturesEnabled: false,
-              minMaxZoomPreference: const MinMaxZoomPreference(6.1, 19),
+              minMaxZoomPreference: const MinMaxZoomPreference(6.1, 19.5),
               myLocationEnabled: GetIt.I<LocationService>().permissionStatus ==
                   LocationPermissionStatus.granted,
               myLocationButtonEnabled: false,

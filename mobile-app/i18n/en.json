@@ -18,7 +18,8 @@
   "destination": "Destination",
   "stations": "Stations",
   "transportMaps": "Transport Maps",
-  "transitSearch": "Transit Search",
+  "accessibilitySearch": "Accessibility Search",
+  "reportIssue": "Report Issue",
   "buyTicket": "Buy ticket",
   "pickTime": "Pick time",
   "pickDate": "Pick date",
@@ -31,6 +32,9 @@
   "getOfAfter": {
     "one": "Get off after {} stop",
     "other": "Get off after {} stops"
+  },
+  "cInput": {
+    "searchStationRoute": "Search Station or Route"
   },
   "cToggle": {
     "onlyAccessible": "Show most accessible routes",

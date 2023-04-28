@@ -10,6 +10,7 @@ class TripOverview extends StatelessWidget {
   const TripOverview({
     required this.route,
     required this.tripType,
+    required this.showGoButton,
     this.showWalkingTime = false,
     this.compactMode = false,
     this.onTap,
@@ -20,6 +21,7 @@ class TripOverview extends StatelessWidget {
   final TravelMode tripType;
   final bool showWalkingTime;
   final bool compactMode;
+  final bool showGoButton;
   final Function()? onTap;
 
   @override
@@ -29,22 +31,31 @@ class TripOverview extends StatelessWidget {
       return const SizedBox();
     }
 
-    return InkWell(
-      onTap: onTap,
-      child: tripType == TravelMode.transit
-          ? compactMode
-              ? multiStepOptionCompact(routeLeg)
-              : multiStepOption(routeLeg)
-          : singleStepOption(routeLeg),
+    return Stack(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(right: showGoButton ? 18 : 0),
+          child: tripType == TravelMode.transit
+              ? compactMode
+                  ? multiStepOptionCompact(routeLeg)
+                  : multiStepOption(routeLeg)
+              : singleStepOption(routeLeg),
+        ),
+        if (showGoButton) _goButton(),
+      ],
     );
   }
 
   Widget multiStepOption(DirectionsLeg routeLeg) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10) +
+          EdgeInsets.only(right: showGoButton ? 16 : 0),
       decoration: BoxDecoration(
-        color: AppColors.backgroundGray,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: AppColors.primary,
+          width: 2,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,8 +101,11 @@ class TripOverview extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: AppColors.backgroundGray,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: AppColors.primary,
+          width: 2,
+        ),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,10 +129,14 @@ class TripOverview extends StatelessWidget {
 
   Widget singleStepOption(DirectionsLeg routeLeg) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16) +
+          EdgeInsets.only(right: showGoButton ? 16 : 0),
       decoration: BoxDecoration(
-        color: AppColors.backgroundGray,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: AppColors.primary,
+          width: 2,
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,6 +177,39 @@ class TripOverview extends StatelessWidget {
           ),
           _estimatedVerticalTime(routeLeg),
         ],
+      ),
+    );
+  }
+
+  Widget _goButton() {
+    return Positioned(
+      right: 0,
+      top: 0,
+      bottom: 0,
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: SizedBox(
+          width: 40,
+          height: 40,
+          child: TextButton(
+            style: TextButton.styleFrom(
+              elevation: 1,
+              backgroundColor: AppColors.primary,
+              shape: const CircleBorder(),
+              padding: const EdgeInsets.all(0),
+            ),
+            onPressed: onTap,
+            child: const Text(
+              'GO',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Roboto',
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

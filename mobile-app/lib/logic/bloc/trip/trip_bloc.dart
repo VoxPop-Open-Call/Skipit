@@ -108,7 +108,6 @@ class TripBloc extends Bloc<TripEvent, TripState> {
           for (final subSet in routes!.transitRoutes!.map((e) => e.stations))
             ...subSet.map((e) => e.name)
         }.toList();
-        debugPrint(stations.toString());
 
         if (stations.isNotEmpty) {
           final response = await _transitOptionRepository.getList(
@@ -119,6 +118,8 @@ class TripBloc extends Bloc<TripEvent, TripState> {
           if (response.isRight && response.right.data?.isNotEmpty == true) {
             routes = routes.copyWith(transitOption: response.right.data);
           }
+        } else {
+          routes = routes.copyWith(transitOption: []);
         }
       }
 
