@@ -10,4 +10,4 @@ The app allows the physically impaired tourist to buy a ticket, see transport ma
 - [Mobile App](/mobile-app/)
 
 ## License
-Distributed under the Attribution-NonCommercial-NoDerivatives 4.0 International. See the [License](/LICENSE) for more information.
+Distributed under the Attribution-NonCommercial-NoDerivatives 4.0 International. See the [License](/LICENSE.md) for more information.
