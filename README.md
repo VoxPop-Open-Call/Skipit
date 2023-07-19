@@ -12,6 +12,5 @@ The app allows the physically impaired tourist to buy a ticket, see transport ma
 ## License
 Distributed under the Attribution-NonCommercial-NoDerivatives 4.0 International. See the [License](/LICENSE.md) for more information.
 
-##Link to app
-https://apps.apple.com/dk/app/skipit/id1555063494
-https://play.google.com/store/apps/details?id=cc.skipit.app
+##Link to App store and Google play
+https://apps.apple.com/dk/app/skipit/id1555063494 and https://play.google.com/store/apps/details?id=cc.skipit.app
