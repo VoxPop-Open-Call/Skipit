@@ -1,4 +1,4 @@
-# VoxPop-- Skipit
+# VoxPop Lisbon travel app
 VoxPop Lisbon travel app for the physically impaired
 
 ## Introduction
