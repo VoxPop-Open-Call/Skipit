@@ -1,0 +1,77 @@
+{
+  "from": "De",
+  "to": "Para",
+  "now": "Agora",
+  "leave": "Sair",
+  "arrive": "Chegar",
+  "support": "Suporte",
+  "cancel": "Cancelar",
+  "ok": "OK",
+  "language": "Idioma",
+  "more": "Mais",
+  "accessibility": "Acessibilidade",
+  "settings": "definições",
+  "mins": "mins",
+  "line": "Linha",
+  "search": "procurar",
+  "loading": "carregamento",
+  "destination": "destino",
+  "stations": "estações",
+  "transportMaps": "mapas de transporte",
+  "accessibilitySearch": "pesquisa de acessibilidade",
+  "reportIssue": "Comunicar problema",
+  "buyTicket": "Comprar bilhete",
+  "pickTime": "Escolher hora",
+  "pickDate": "Escolher data",
+  "currentLocation": "localização atual",
+  "selectRoute": "Escolher uma rota",
+  "otherRoutes": "Mostrar outras rotas",
+  "journeyOverview": "Resumo da viagem",
+  "chooseLanguage": "Escolha um idioma",
+  "accessibilityAtStation": "Acessibiidade na estação",
+  "getOfAfter": {
+    "one": "Saia depois de uma {} paragem",
+    "other": " Saia depois de várias {} paragens"
+  },
+  "cInput": {
+    "searchStationRoute": "Procurar estação ou rota"
+  },
+  "cToggle": {
+    "onlyAccessible": "Mostrar rotas mais accessíveis",
+    "stationAccessibility": "Mostrar acessibilidade na estação"
+  },
+  "cTransportType": {
+    "train": "Comboio",
+    "tram": "Elétrico",
+    "bus": "Autocarro",
+    "metro": "Metro",
+    "ferry": "Ferry"
+  },
+  "cAccessibility": {
+    "elevator": "Elevador",
+    "stairs": "Escadas",
+    "escalator": "Escadas-rolantes",
+    "toilet": "WC",
+    "waitingRoom": "Sala de espera",
+    "bikeParking": "estacionamento para bicicletas",
+    "ramp": "Rampa",
+    "wheelchairFriendly": "Estação sem barreiras arquitetónicas",
+    "disabledToilet": "WC adaptado",
+    "ticketPurchase": "Compra de bilhetes",
+    "assistance": "Pessoal de apoio na estação"
+  },
+  "cError": {
+    "pageNotFound": "Página não encontrada",
+    "oopsTryAgain": "Oops, algo correu mal, por favor tente novamente.",
+    "noRoute": "Rota indisponível",
+    "noAccessibleRoute": "Não está disponível nenhum percurso acessível. Por favor desligue the \"@:cToggle.onlyAccessible\" a funcionalidade para ver todas as rotas",
+    "noTransportMaps": "Mapas de transporte indisponíveis.",
+    "noAccessibilityStation": "Não foram encontrados dados de acessibilidade para esta estação.",
+    "nothingFound": "Indisponível.",
+    "sendEmail": "Falha no envio do e-mail. Por favor, tente novamente mais tarde"
+  },
+  "cLocation": {
+    "serviceIsDisabled": "O serviço de localização do seu dispositivo está desactivado. Active-o e tente novamente.",
+    "denied": "Recusou partilhar a sua localização. Autorize a partilha de localização e tente novamente."
+  }
+}

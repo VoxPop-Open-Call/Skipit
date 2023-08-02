@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_directions_api/google_directions_api.dart';
+import 'package:lisbon_travel/models/enums/accessibility_enum.dart';
 import 'package:lisbon_travel/models/responses/transit_option.dart';
 import 'package:lisbon_travel/utils/extensions/index.dart';
 
@@ -18,6 +19,13 @@ class TripRouteModel with _$TripRouteModel {
 }
 
 extension TripRouteModelX on TripRouteModel {
+  List<AccessibilityEnum> get _importantAccessibilities => const [
+        AccessibilityEnum.assistance,
+        AccessibilityEnum.elevator,
+        AccessibilityEnum.wheelchairFriendly,
+        AccessibilityEnum.ramp,
+      ];
+
   TripRouteModel get filteredCopy {
     // if there is no route |or| we don't have any route accessibility data,
     // there is nothing to filter and we return the same thing
@@ -36,7 +44,12 @@ extension TripRouteModelX on TripRouteModel {
             // the whole route is not accessible
             final accessibilities =
                 transitOption?.findByTransitTypeTuple(station)?.accessibilities;
-            if (accessibilities == null || accessibilities.length < 3) {
+            final importantCount = accessibilities
+                    ?.where((element) =>
+                        _importantAccessibilities.contains(element))
+                    .length ??
+                0;
+            if (importantCount < 2) {
               return false;
             }
           }

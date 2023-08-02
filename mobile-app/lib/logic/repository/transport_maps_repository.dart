@@ -9,7 +9,8 @@ import 'package:lisbon_travel/models/responses/transport_map_response.dart';
 
 abstract class TransportMapsRepository {
   Future<Either<NetworkError, Response<TransportMapResponse>>> getWithId(
-      String id);
+    String id,
+  );
 
   Future<Either<NetworkError, Response<List<TransportMapResponse>>>> getAll();
 }
@@ -33,7 +34,9 @@ class TransportMapsRemoteRepository extends TransportMapsRepository {
   Future<Either<NetworkError, Response<List<TransportMapResponse>>>>
       getAll() async {
     return mapApiException<List<TransportMapResponse>>(
-      method: () => TransportAccessibilityApi(dio).getTransportMaps(),
+      method: () => TransportAccessibilityApi(dio).getTransportMaps(
+        cityEquals: 'Lisbon',
+      ),
     );
   }
 }

@@ -48,9 +48,16 @@ class TransportAccessibilityApi {
     );
   }
 
-  Future<Response<List<TransportMapResponse>>> getTransportMaps() async {
+  Future<Response<List<TransportMapResponse>>> getTransportMaps({
+    String? cityEquals,
+    bool cityCaseInsensitive = true,
+  }) async {
     final request = await _dio.get(
       '/transportMaps',
+      queryParameters: {
+        if (cityEquals != null) 'where[city][equals]': cityEquals,
+        if (cityCaseInsensitive) 'where[city][mode]': 'insensitive',
+      },
     );
 
     return convertDioBody<List<TransportMapResponse>>(
